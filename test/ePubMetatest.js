@@ -3,7 +3,13 @@ var assert = require("assert");
 var ePubMeta = require("../src/ePubMeta.js");
 
 describe("ePubMeta", () => {
-  it("Should return open when called", () => {
-    assert.equal("open", ePubMeta("../testEpubs/1.epub"));
+  it("Should throw errors when passed nothing", () => {
+    assert.throws(
+      () => {
+        ePubMeta();
+      },
+      Error,
+      "epubfile is null."
+    );
   });
 });
